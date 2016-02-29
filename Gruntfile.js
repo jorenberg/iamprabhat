@@ -35,3 +35,4 @@
 
 // Note: To import project metadata into the -/Grunt/- config.
 // @require   : bower.json
+// @require   : package.json

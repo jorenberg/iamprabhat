@@ -37,3 +37,9 @@ $axix-brand-base-color-hex:                                            #F15E4A !
 $axix-brand-base-color-rgb:                                     rgb(241,94,74) !default;
 $axix-base-white-color-hex:                                            #FFFFFF !default;
 $axix-base-white-color-rgb:                                   rgb(255,255,255) !default;
+
+// 3. Components ==//==
+$axix-display-blocktype:                                                 block !default;
+$axix-display-inlinetype:                                         inline-block !default;
+$axix-position-abs:                                                   absolute !default;
+$axix-position-rel:                                                   relative !default;

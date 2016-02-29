@@ -23,3 +23,11 @@
 // 1. Typography ==//==
 $axix-base-font-family:  quote("Helvetica Neue"), Helvetica, Arial, sans-serif !default;
 $axix-base-font-family-sans-serif:              quote("Open Sans"), sans-serif !default;
+// 1.0 Base Font Size
+$axix-base-font-size:                                                  0.875em !default; // 14px
+// 1.1 Heading: <h1> to <h2>
+$axix-base-font-size-h1:                 floor(($axix-base-font-size * 1.645)) !default;
+$axix-base-font-size-h2:                 floor(($axix-base-font-size * 1.308)) !default;
+// 1.2 Line Height
+$axix-base-line-height:                                            1.428571429 !default; // [20/14]
+$axix-line-height-computed: floor(($axix-base-font-size * $axix-base-line-height)) !default; // ~20px

@@ -31,3 +31,9 @@ $axix-base-font-size-h2:                 floor(($axix-base-font-size * 1.308)) !
 // 1.2 Line Height
 $axix-base-line-height:                                            1.428571429 !default; // [20/14]
 $axix-line-height-computed: floor(($axix-base-font-size * $axix-base-line-height)) !default; // ~20px
+
+// 2. Colors ==//==
+$axix-brand-base-color-hex:                                            #F15E4A !default;
+$axix-brand-base-color-rgb:                                     rgb(241,94,74) !default;
+$axix-base-white-color-hex:                                            #FFFFFF !default;
+$axix-base-white-color-rgb:                                   rgb(255,255,255) !default;

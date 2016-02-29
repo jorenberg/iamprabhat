@@ -244,3 +244,12 @@ $axix-val-eighty:                                                          80% !
   background: $background;
   color: $color;
 }
+
+// ==========================================
+// F. The @mixin directive for Size (W & H)
+// ==========================================
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}

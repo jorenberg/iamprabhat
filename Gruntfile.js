@@ -32,3 +32,5 @@
 // main module.
 // @require   : grunt
 // @require   : grunt-cli
+
+// Note: To import project metadata into the -/Grunt/- config.

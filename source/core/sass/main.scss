@@ -258,3 +258,99 @@ $axix-val-eighty:                                                          80% !
 // using the `-webkit-font-smoothing` and `-moz-osx-font-smoothing` CSS properties.
 /// @type Boolean
 $axix-body-antialiased: true !default;
+
+// ==========================================
+// G. The @mixin directive for AXIX Globals.
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ==========================================
+@mixin axix-base-global-settings {
+  // 0. normalize reset css.
+  // @using: @include directive for custom - normalize.
+  @include -axix-normalize;
+  
+  // 1. Universal Selector
+  // ----------------------
+  // An asterisk (*) is the universal selector for CSS.
+  // It matches a single element of any type.
+  /// Note: Omitting the asterisk with simple selectors has the same effect.
+  /// Set box-sizing globally to handle padding and border widths.
+  /// ----------------------------------------------------------------------
+  *,
+  *:before,
+  *:after {
+    // @using: @include directive for box-sizing.
+    @include box-sizing(border-box);
+    margin: 0;
+    padding: 0;
+  }
+  
+  // 2. ::selection
+  // --------------
+  ::-moz-selection {
+    // @using: @include directive for ::selection.
+    @include axix-selection(#4B3832, #BE9B7B);
+  }
+  ::selection {
+    // @using: @include directive for ::selection.
+    @include axix-selection(#4B3832, #BE9B7B);
+  }
+  
+  // 3. Root element
+  // ---------------
+  html {
+    font-size: 10px;
+    // @using: @include directive for size (W & H) and box-sizing.
+    @include size(100%);
+    @include box-sizing(inherit);
+    // Note: -webkit-tap-highlight-color is a non-standard CSS property that sets the color of the highlight,
+    // that appears over a link while it's being tapped to indicate to the user,
+    /// (1) that their tap is being successfully recognized, and
+    /// (2) which element they're tapping on.
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* for some Androids */
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  // 4. Default body style(s).
+  // -------------------------
+  body {
+    background-color: $axix-base-white-color-rgb;
+    color: #4C4C4C;
+    font-family: $axix-base-font-family;
+    font-size: $axix-base-font-size;
+    font-style: normal;
+    font-weight: 100;
+    line-height: $axix-base-line-height;
+    margin: 0;
+    padding: 0;
+    // @using: @include directive for size (W & H).
+    @include size(100%);
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    // Note: Now, add below `JavaScript` to allow :active styles to work in our CSS on a page in Mobile Safari:
+    // document.addEventListener("touchstart", function(){}, true);
+    /* for some Androids */
+    -webkit-tap-highlight-color: transparent;
+    // for effective typography.
+    @if ($axix-body-antialiased) {
+      /// @param {@value} - none | subpixel-antialiased | antialiased
+      -webkit-font-smoothing: antialiased;
+      /// only for Mac O/S.
+      -moz-osx-font-smoothing: grayscale;
+    }
+  }
+  
+  // 5. Image properties.
+  // --------------------
+  img {
+    // Get rid of gap under images by making them display: inline-block; by default.
+    display: $axix-display-inlinetype;
+    display: -moz-inline-stack;
+    // Grid defaults to get images and embeds to work properly.
+    height: auto;
+    width: auto;
+    max-width: $axix-val-hundred;
+    // for IE.
+    -ms-interpolation-mode: bicubic;
+    vertical-align: middle;
+  }
+}

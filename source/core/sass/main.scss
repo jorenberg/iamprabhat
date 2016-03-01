@@ -369,3 +369,13 @@ $axix-body-antialiased: true !default;
   clip: rect(0, 0, 0, 0);
   position: absolute;
 }
+
+// ==========================================
+// I. CSS3 calc mixin.
+// ==========================================
+
+@mixin axix-calc($property, $value) {
+  #{$property}: -webkit-calc(#{$value});
+  #{$property}: -moz-calc(#{$value});
+  #{$property}: calc(#{$value});
+}

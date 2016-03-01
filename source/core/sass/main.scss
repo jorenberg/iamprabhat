@@ -626,3 +626,55 @@ $browser-context: 16;
        -o-transform-origin: $origin;
           transform-origin: $origin;
 }
+
+// ==========================================
+// P. The @mixin directive for Transitions.
+// ==========================================
+// The transition CSS property can enables to define the transition between two states of an element.
+// Different states may be defined using pseudo-classes like :hover or :active or dynamically set using JavaScript.
+// C-1. transition - a shorthand property for below - "all".
+// C-2. transition-property
+// C-3. transition-delay
+// C-4. transition-duration
+// C-5. transition-timing-function
+
+// C-1.
+@mixin transition($transition...) {
+  -webkit-transition: $transition;
+     -moz-transition: $transition;
+      -ms-transition: $transition;
+       -o-transition: $transition;
+          transition: $transition;
+}
+// C-2.
+@mixin transition-property($transition-property...) {
+  -webkit-transition-property: $transition-property;
+     -moz-transition-property: $transition-property;
+      -ms-transition-property: $transition-property;
+       -o-transition-property: $transition-property;
+          transition-property: $transition-property;
+}
+// C-3.
+@mixin transition-delay($transition-delay) {
+  -webkit-transition-delay: $transition-delay;
+     -moz-transition-delay: $transition-delay;
+      -ms-transition-delay: $transition-delay;
+       -o-transition-delay: $transition-delay;
+          transition-delay: $transition-delay;
+}
+// C-4.
+@mixin transition-duration($transition-duration...) {
+  -webkit-transition-duration: $transition-duration;
+     -moz-transition-duration: $transition-duration;
+      -ms-transition-duration: $transition-duration;
+       -o-transition-duration: $transition-duration;
+          transition-duration: $transition-duration;
+}
+// C-5.
+@mixin transition-timing-function($timing-function) {
+  -webkit-transition-timing-function: $timing-function;
+     -moz-transition-timing-function: $timing-function;
+      -ms-transition-timing-function: $timing-function;
+       -o-transition-timing-function: $timing-function;
+          transition-timing-function: $timing-function;
+}

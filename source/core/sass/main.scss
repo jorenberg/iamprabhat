@@ -757,3 +757,15 @@ $cache: ();
     @extend %#{$property}-#{index(map-get($cache, $property), $value)};
   }
 }
+
+// ---------------------------------- //
+// Using @mixin & @function directive //
+// ---------------------------------- //
+/// Feature detection functions.
+@if mixin-exists(axix-base-global-settings) {
+  // @include directive for custom - normalize.
+  @include axix-base-global-settings;
+} @else {
+  // using @error directive to send a message to the console and halt the compiler.
+  @error "AXIX®: - Please define the @mixin `axix-base-global-settings`.";
+}

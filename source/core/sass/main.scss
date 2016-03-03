@@ -769,3 +769,57 @@ $cache: ();
   // using @error directive to send a message to the console and halt the compiler.
   @error "AXIX®: - Please define the @mixin `axix-base-global-settings`.";
 }
+
+// ============================================
+// S. A smart body @mixin directive.
+//    @author : Prabhat Kumar.
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Global body settings.
+
+@mixin axix-body-settings {
+  html,
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
+  //---- for Body effect.
+  body {
+    //--[1]-- for top and bottom.
+    &::after,
+    &::before {
+      content: "";
+      background: $axix-brand-base-color-hex;
+      height: 4px;
+      left: 0;
+      position: fixed;
+      right: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+    &::before {
+      top: 0;
+    }
+    //--[2]-- for left and right.
+    border-left: 2px solid $axix-brand-base-color-hex;
+    border-right: 2px solid $axix-brand-base-color-hex;
+  }
+  //---- Container to put all elements, inside it.
+  .container {
+    @if mixin-exists(size) {
+      // using size @mixin.
+      @include size(100%);
+      // using cache @mixin.
+      @include cache((
+        margin: 160px auto 0,
+        text-align: center,
+        margin-bottom: 60px
+      ));
+    }
+  }
+  //---- Responsive container.
+  @media screen and (max-width: 568px) {
+    .container {
+      margin-top: 60px;
+    }
+  }
+}

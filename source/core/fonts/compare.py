@@ -6,3 +6,4 @@ __authors__ 	= [
     '"Sequømics Corporation" <admin@sequomics.com>'
     ]
 __account__ 	= 'https://github.com/iamprabhat'
+__homepage__ 	= 'http://prabhatkumar.org/'
